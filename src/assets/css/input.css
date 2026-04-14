@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@source "../**/*.html";
+
+@theme {
+  --font-sans: "Atkinson Hyperlegible", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus ring accessible */
+:focus-visible {
+  outline: 2px solid var(--color-primary, #c59f60);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Gallery hover effect */
+.gallery-item img {
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
