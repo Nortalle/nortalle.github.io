@@ -1,14 +1,19 @@
 {
-  "name": "vincent-guidoux-portfolio",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "build": "tailwindcss -i src/assets/css/input.css -o dist/assets/css/style.css --minify",
-    "dev": "tailwindcss -i src/assets/css/input.css -o dist/assets/css/style.css --watch"
-  },
-  "devDependencies": {
-    "@tailwindcss/cli": "^4.1.0",
-    "daisyui": "^5.0.0",
-    "tailwindcss": "^4.1.0"
-  }
+	"name": "vincent-guidoux-portfolio",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"copy": "cp src/index.html dist/index.html && cp -r src/assets/images dist/assets/images",
+		"build": "npm run copy && tailwindcss -i src/assets/css/input.css -o dist/assets/css/style.css --minify",
+		"watch:html": "chokidar 'src/**/*.html' -c 'npm run copy' --initial",
+		"dev": "npm run copy && concurrently \"tailwindcss -i src/assets/css/input.css -o dist/assets/css/style.css --watch\" \"npm run watch:html\" \"browser-sync start --server dist --files 'dist/**/*' --no-open\" --kill-others"
+	},
+	"devDependencies": {
+		"@tailwindcss/cli": "^4.1.0",
+		"browser-sync": "^3.0.4",
+		"chokidar-cli": "^3.0.0",
+		"concurrently": "^9.2.1",
+		"daisyui": "^5.0.0",
+		"tailwindcss": "^4.1.0"
+	}
 }

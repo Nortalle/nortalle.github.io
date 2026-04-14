@@ -1,27 +1,37 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+	themes: dracula --default;
+}
 @source "../**/*.html";
 
 @theme {
-  --font-sans: "Atkinson Hyperlegible", ui-sans-serif, system-ui, sans-serif;
+	--font-sans: "Atkinson Hyperlegible", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Custom colors overriding DaisyUI dracula theme */
+[data-theme="dracula"] {
+	--color-primary: #ddbaa3;
+	--color-primary-content: #1a1210;
+	--color-secondary: #5f402e;
+	--color-secondary-content: #f5ebe5;
 }
 
 /* Smooth scrolling */
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 /* Focus ring accessible */
 :focus-visible {
-  outline: 2px solid var(--color-primary, #c59f60);
-  outline-offset: 3px;
-  border-radius: 4px;
+	outline: 2px solid var(--color-primary, #ddbaa3);
+	outline-offset: 3px;
+	border-radius: 4px;
 }
 
 /* Gallery hover effect */
 .gallery-item img {
-  transition: transform 0.5s ease;
+	transition: transform 0.5s ease;
 }
 .gallery-item:hover img {
-  transform: scale(1.05);
+	transform: scale(1.05);
 }

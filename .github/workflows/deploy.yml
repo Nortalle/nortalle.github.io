@@ -28,7 +28,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: '24'
+          node-version: "24"
           cache: npm
 
       - name: Install dependencies
@@ -42,11 +42,9 @@ jobs:
           mkdir -p dist/assets/css
           mkdir -p dist/assets/image
           mkdir -p dist/assets/cv
-          mkdir -p dist/en
 
           # HTML pages
           cp src/index.html dist/index.html
-          cp src/en/index.html dist/en/index.html
 
           # Static assets (images, CV, etc.)
           if [ -d "src/assets/image" ] && [ "$(ls -A src/assets/image 2>/dev/null)" ]; then
