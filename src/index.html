@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="fr" data-theme="dracula">
+<html lang="fr" data-theme="dracula" data-palette="art">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<!-- SEO -->
-		<title>Vincent Guidoux — Acteur &amp; Comédien</title>
+		<title>Vincent Guidoux — Acteur &amp; Ingenieur</title>
 		<meta
 			name="description"
-			content="Portfolio de Vincent Guidoux, acteur et comédien. Découvrez son parcours, son showreel et ses photos professionnelles."
+			content="Vincent Guidoux — Acteur, comedien, ingenieur en informatique, charge de cours et entrepreneur."
 		/>
 		<meta name="author" content="Vincent Guidoux" />
 		<link rel="canonical" href="https://nortalle.github.io/" />
@@ -16,16 +16,16 @@
 		<!-- Open Graph -->
 		<meta
 			property="og:title"
-			content="Vincent Guidoux — Acteur &amp; Comédien"
+			content="Vincent Guidoux — Acteur &amp; Ingenieur"
 		/>
 		<meta
 			property="og:description"
-			content="Portfolio de Vincent Guidoux, acteur et comédien."
+			content="Portfolio de Vincent Guidoux. Deux facettes, une seule personne."
 		/>
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://nortalle.github.io/" />
 
-		<!-- Fonts : Atkinson Hyperlegible (accessibilité) -->
+		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -33,18 +33,27 @@
 			href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap"
 		/>
 
-		<!-- CSS compilé par GitHub Actions -->
+		<!-- CSS -->
 		<link rel="stylesheet" href="assets/css/style.css" />
 	</head>
 
 	<body class="min-h-screen bg-base-100 text-base-content">
-		<!-- Lien d'évitement (accessibilité) -->
+		<!-- Lien d'evitement -->
 		<a
 			href="#contenu-principal"
 			class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-content focus:rounded-lg focus:font-bold"
 		>
 			Aller au contenu principal
 		</a>
+
+		<!-- Bandeau en construction -->
+		<div
+			class="bg-warning text-warning-content text-center text-sm font-semibold py-2 px-4"
+			role="alert"
+		>
+			Site en construction — certaines informations peuvent etre incompletes ou
+			inexactes.
+		</div>
 
 		<!-- ================================================================
        NAVIGATION
@@ -56,7 +65,6 @@
 				class="navbar container mx-auto max-w-6xl px-4"
 				aria-label="Navigation principale"
 			>
-				<!-- Nom / Logo -->
 				<div class="navbar-start">
 					<a
 						href="#accueil"
@@ -67,8 +75,8 @@
 					</a>
 				</div>
 
-				<!-- Menu desktop -->
-				<div class="navbar-center hidden md:flex">
+				<!-- Menu desktop — Art -->
+				<div id="nav-art" class="navbar-center hidden md:flex">
 					<ul
 						class="menu menu-horizontal px-1 gap-1 text-sm font-medium"
 						role="list"
@@ -77,7 +85,7 @@
 							<a
 								href="#a-propos"
 								class="rounded-lg hover:text-primary transition-colors"
-								>À propos</a
+								>A propos</a
 							>
 						</li>
 						<li>
@@ -111,8 +119,51 @@
 					</ul>
 				</div>
 
+				<!-- Menu desktop — Info -->
+				<div id="nav-info" class="navbar-center hidden">
+					<ul
+						class="menu menu-horizontal px-1 gap-1 text-sm font-medium"
+						role="list"
+					>
+						<li>
+							<a
+								href="#a-propos-info"
+								class="rounded-lg hover:text-primary transition-colors"
+								>A propos</a
+							>
+						</li>
+						<li>
+							<a
+								href="#projets"
+								class="rounded-lg hover:text-primary transition-colors"
+								>Projets</a
+							>
+						</li>
+						<li>
+							<a
+								href="#enseignement"
+								class="rounded-lg hover:text-primary transition-colors"
+								>Enseignement</a
+							>
+						</li>
+						<li>
+							<a
+								href="#cv-info"
+								class="rounded-lg hover:text-primary transition-colors"
+								>CV</a
+							>
+						</li>
+						<li>
+							<a
+								href="#contact-info"
+								class="rounded-lg hover:text-primary transition-colors"
+								>Contact</a
+							>
+						</li>
+					</ul>
+				</div>
+
 				<div class="navbar-end gap-2">
-					<!-- Hamburger menu mobile -->
 					<div class="dropdown dropdown-end md:hidden">
 						<button
 							tabindex="0"
@@ -137,15 +188,28 @@
 							</svg>
 						</button>
 						<ul
+							id="mobile-nav-art"
 							tabindex="0"
 							class="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow-xl bg-base-200 rounded-box w-52 border border-base-300"
 							role="list"
 						>
-							<li><a href="#a-propos">À propos</a></li>
+							<li><a href="#a-propos">A propos</a></li>
 							<li><a href="#showreel">Showreel</a></li>
 							<li><a href="#galerie">Galerie</a></li>
 							<li><a href="#cv">CV</a></li>
 							<li><a href="#contact">Contact</a></li>
+						</ul>
+						<ul
+							id="mobile-nav-info"
+							tabindex="0"
+							class="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow-xl bg-base-200 rounded-box w-52 border border-base-300 hidden"
+							role="list"
+						>
+							<li><a href="#a-propos-info">A propos</a></li>
+							<li><a href="#projets">Projets</a></li>
+							<li><a href="#enseignement">Enseignement</a></li>
+							<li><a href="#cv-info">CV</a></li>
+							<li><a href="#contact-info">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -157,73 +221,104 @@
        ================================================================ -->
 		<main id="contenu-principal">
 			<!-- ==============================================================
-         HERO
+         HERO avec toggle
          ============================================================== -->
 			<section
 				id="accueil"
-				aria-label="Présentation"
+				aria-label="Presentation"
 				class="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-base-200"
 			>
-				<!--
-        PHOTO HERO — À ajouter quand les photos sont disponibles.
-        Remplace le bloc ci-dessous par :
-
-        <picture class="absolute inset-0">
-          <source media="(max-width: 640px)"
-                  srcset="assets/image/hero-mobile.webp"
-                  type="image/webp">
-          <img src="assets/image/hero-desktop.webp"
-               alt=""
-               role="presentation"
-               class="w-full h-full object-cover object-top"
-               fetchpriority="high">
-        </picture>
-
-        Tailles recommandées :
-        hero-desktop.webp : 1920 × 1080 px minimum
-        hero-mobile.webp  : 750 × 1100 px minimum
-      -->
-
-				<!-- Dégradé bas de page pour lisibilité du texte -->
+				<img
+					id="hero-bg-art"
+					src="assets/images/desktop/solo-portrait-man-looking-up.jpg"
+					alt=""
+					class="absolute inset-0 w-full h-full object-cover object-top opacity-30 transition-opacity duration-500"
+					aria-hidden="true"
+				/>
+				<img
+					id="hero-bg-info"
+					src="assets/images/desktop/duo-portrait-looking-sideways.jpg"
+					alt=""
+					class="absolute inset-0 w-full h-full object-cover object-top opacity-0 transition-opacity duration-500"
+					aria-hidden="true"
+				/>
 				<div
-					class="absolute inset-0 bg-gradient-to-b from-transparent via-base-100/20 to-base-100 z-10"
+					class="absolute inset-0 bg-gradient-to-b from-transparent via-base-100/40 to-base-100 z-10"
 					aria-hidden="true"
 				></div>
 
-				<!-- Contenu hero -->
 				<div class="relative z-20 text-center px-6 py-32 max-w-4xl mx-auto">
-					<p
-						class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-6"
-					>
-						Acteur &nbsp;·&nbsp; Comédien
-					</p>
-
 					<h1
-						class="text-7xl sm:text-8xl lg:text-[10rem] font-bold leading-none mb-8 text-base-content"
+						class="text-7xl sm:text-8xl lg:text-[10rem] font-bold leading-none mb-16 text-base-content"
 					>
-						Vincent<br />
-						<span class="text-primary">Guidoux</span>
+						Vincent<br /><span class="text-primary">Guidoux</span>
 					</h1>
 
-					<!-- TODO : remplace cette tagline par la tienne -->
+					<!-- Toggle Art / Info -->
+					<div class="flex items-center justify-center gap-6 sm:gap-8 mb-12">
+						<span
+							id="label-art"
+							class="text-sm sm:text-base font-bold uppercase tracking-widest cursor-pointer transition-opacity duration-300"
+							style="color: #ddbaa3"
+						>
+							Acteur &amp; Comedien
+						</span>
+						<input
+							type="checkbox"
+							class="toggle toggle-lg"
+							id="mode-toggle"
+							aria-label="Basculer entre le portfolio artistique et informatique"
+						/>
+						<span
+							id="label-info"
+							class="text-sm sm:text-base font-bold uppercase tracking-widest cursor-pointer opacity-40 transition-opacity duration-300"
+							style="color: #e4e6da"
+						>
+							Ingenieur &amp; Enseignant
+						</span>
+					</div>
+
+					<!-- Taglines -->
 					<p
-						class="text-base-content/70 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
+						id="tagline-art"
+						class="text-base-content/70 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed transition-opacity duration-300"
 					>
-						Comédien passionné, disponible pour vos projets cinéma, télévision,
-						théâtre et publicité.
+						Comedien passionne, disponible pour vos projets cinema, television,
+						theatre et publicite.
+					</p>
+					<p
+						id="tagline-info"
+						class="text-base-content/70 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed transition-opacity duration-300 hidden"
+					>
+						Ingenieur en informatique, charge de cours a la HEIG-VD et
+						co-fondateur d'une entreprise de developpement web.
 					</p>
 
-					<div class="flex flex-col sm:flex-row gap-4 justify-center">
-						<a href="#showreel" class="btn btn-primary btn-lg tracking-wide">
-							Voir le Showreel
-						</a>
-						<a href="#contact" class="btn btn-outline btn-lg tracking-wide">
-							Me contacter
-						</a>
+					<!-- CTA -->
+					<div
+						id="cta-art"
+						class="flex flex-col sm:flex-row gap-4 justify-center"
+					>
+						<a href="#galerie" class="btn btn-primary btn-lg tracking-wide"
+							>Voir la galerie</a
+						>
+						<a href="#contact" class="btn btn-outline btn-lg tracking-wide"
+							>Me contacter</a
+						>
+					</div>
+					<div
+						id="cta-info"
+						class="flex flex-col sm:flex-row gap-4 justify-center hidden"
+					>
+						<a href="#projets" class="btn btn-primary btn-lg tracking-wide"
+							>Voir mes projets</a
+						>
+						<a href="#contact-info" class="btn btn-outline btn-lg tracking-wide"
+							>Me contacter</a
+						>
 					</div>
 				</div>
 
-				<!-- Indicateur de défilement -->
 				<div
 					class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce"
 					aria-hidden="true"
@@ -246,470 +341,107 @@
 			</section>
 
 			<!-- ==============================================================
-         À PROPOS
+         CONTENU ART
          ============================================================== -->
-			<section
-				id="a-propos"
-				aria-labelledby="titre-a-propos"
-				class="py-24 bg-base-100"
-			>
-				<div class="container mx-auto max-w-6xl px-6">
-					<div class="text-center mb-16">
-						<p
-							class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3"
-						>
-							Qui suis-je ?
-						</p>
-						<h2 id="titre-a-propos" class="text-4xl md:text-5xl font-bold">
-							À propos
-						</h2>
-					</div>
-
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
-						<!-- Portrait -->
-						<div>
-							<!--
-              PHOTO PORTRAIT — À ajouter quand les photos sont disponibles.
-              Remplace le bloc placeholder par :
-
-              <picture class="block w-full">
-                <source media="(max-width: 640px)"
-                        srcset="assets/image/portrait-mobile.webp"
-                        type="image/webp">
-                <img src="assets/image/portrait-desktop.webp"
-                     alt="Vincent Guidoux, acteur et comédien"
-                     class="w-full h-full object-cover rounded-2xl"
-                     width="600" height="750"
-                     loading="lazy">
-              </picture>
-
-              Tailles recommandées :
-              portrait-desktop.webp : 600 × 750 px
-              portrait-mobile.webp  : 400 × 500 px
-            -->
-							<div
-								class="aspect-[4/5] bg-base-200 rounded-2xl overflow-hidden border border-primary/20 flex items-center justify-center"
+			<div id="content-art">
+				<section
+					id="a-propos"
+					aria-labelledby="titre-a-propos"
+					class="py-24 bg-base-100"
+				>
+					<div class="container mx-auto max-w-6xl px-6">
+						<div class="text-center mb-16">
+							<p
+								class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3"
 							>
-								<span class="text-base-content/20 text-sm select-none"
-									>Photo à venir</span
+								Qui suis-je ?
+							</p>
+							<h2 id="titre-a-propos" class="text-4xl md:text-5xl font-bold">
+								A propos
+							</h2>
+						</div>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
+							<div>
+								<div
+									class="aspect-[4/5] bg-base-200 rounded-2xl overflow-hidden border border-primary/20 flex items-center justify-center"
 								>
+									<img
+										src="assets/images/desktop/solo-portrait-man-looking-up.jpg"
+										alt="Vincent Guidoux appuye sur un fauteuil, souriant"
+										class="w-full h-full object-cover object-center"
+										loading="lazy"
+									/>
+								</div>
+							</div>
+							<div>
+								<p class="text-base-content/80 text-lg leading-relaxed mb-5">
+									Remplace ce paragraphe par ta biographie. Parle de ton
+									parcours, de ta formation, de ce qui t'a amene au jeu d'acteur
+									et de ta passion pour le theatre et le cinema.
+								</p>
+								<p class="text-base-content/70 leading-relaxed mb-5">
+									Mentionne tes formations (conservatoire, cours, ateliers), tes
+									influences et les genres que tu affectionnes.
+								</p>
+								<p class="text-base-content/70 leading-relaxed mb-10">
+									Quelques mots sur ta disponibilite, ta mobilite et les langues
+									que tu parles.
+								</p>
+								<div
+									class="flex flex-wrap gap-2"
+									role="list"
+									aria-label="Competences et caracteristiques"
+								>
+									<span
+										class="badge badge-outline badge-primary badge-lg"
+										role="listitem"
+										>Suisse romande</span
+									>
+									<span
+										class="badge badge-outline badge-primary badge-lg"
+										role="listitem"
+										>Francais</span
+									>
+									<span
+										class="badge badge-outline badge-primary badge-lg"
+										role="listitem"
+										>English</span
+									>
+								</div>
 							</div>
 						</div>
+					</div>
+				</section>
 
-						<!-- Bio -->
-						<div>
-							<!-- TODO : Remplace ce texte par ta biographie -->
-							<p class="text-base-content/80 text-lg leading-relaxed mb-5">
-								Remplace ce paragraphe par ta biographie. Parle de ton parcours,
-								de ta formation, de ce qui t'a amené au jeu d'acteur et de ta
-								passion pour le théâtre et le cinéma.
+				<section
+					id="showreel"
+					aria-labelledby="titre-showreel"
+					class="py-24 bg-base-200"
+				>
+					<div class="container mx-auto max-w-6xl px-6">
+						<div class="text-center mb-12">
+							<p
+								class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3"
+							>
+								Mon travail
 							</p>
-							<p class="text-base-content/70 leading-relaxed mb-5">
-								Mentionne tes formations (conservatoire, cours, ateliers), tes
-								influences et les genres que tu affectionnes.
+							<h2
+								id="titre-showreel"
+								class="text-4xl md:text-5xl font-bold mb-4"
+							>
+								Showreel
+							</h2>
+							<p class="text-base-content/60 max-w-lg mx-auto">
+								Une selection de mes meilleures performances a l'ecran.
 							</p>
-							<p class="text-base-content/70 leading-relaxed mb-10">
-								Quelques mots sur ta disponibilité, ta mobilité et les langues
-								que tu parles.
-							</p>
-
-							<!-- Badges — TODO : complète / modifie selon ton profil -->
+						</div>
+						<div class="max-w-4xl mx-auto">
 							<div
-								class="flex flex-wrap gap-2"
-								role="list"
-								aria-label="Compétences et caractéristiques"
-							>
-								<span
-									class="badge badge-outline badge-primary badge-lg"
-									role="listitem"
-									>Suisse romande</span
-								>
-								<span
-									class="badge badge-outline badge-primary badge-lg"
-									role="listitem"
-									>Français</span
-								>
-								<span
-									class="badge badge-outline badge-primary badge-lg"
-									role="listitem"
-									>English</span
-								>
-								<!-- Ajoute tes propres badges ici, ex :
-              <span class="badge badge-outline badge-primary badge-lg" role="listitem">Théâtre</span>
-              <span class="badge badge-outline badge-primary badge-lg" role="listitem">Cinéma</span>
-              <span class="badge badge-outline badge-primary badge-lg" role="listitem">Chant</span>
-              --></div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- ==============================================================
-         SHOWREEL
-         ============================================================== -->
-			<section
-				id="showreel"
-				aria-labelledby="titre-showreel"
-				class="py-24 bg-base-200"
-			>
-				<div class="container mx-auto max-w-6xl px-6">
-					<div class="text-center mb-12">
-						<p
-							class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3"
-						>
-							Mon travail
-						</p>
-						<h2 id="titre-showreel" class="text-4xl md:text-5xl font-bold mb-4">
-							Showreel
-						</h2>
-						<p class="text-base-content/60 max-w-lg mx-auto">
-							Une sélection de mes meilleures performances à l'écran.
-						</p>
-					</div>
-
-					<div class="max-w-4xl mx-auto">
-						<!--
-            VIDÉO SHOWREEL — Décommente et remplace l'URL quand tu as une vidéo.
-
-            YouTube  : https://www.youtube.com/embed/TON_VIDEO_ID
-            Vimeo    : https://player.vimeo.com/video/TON_VIDEO_ID
-
-            <div class="aspect-video rounded-2xl overflow-hidden border border-primary/20">
-              <iframe
-                src="https://www.youtube.com/embed/TON_VIDEO_ID?rel=0"
-                title="Showreel de Vincent Guidoux"
-                class="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                loading="lazy">
-              </iframe>
-            </div>
-          -->
-
-						<!-- Placeholder vidéo -->
-						<div
-							class="aspect-video rounded-2xl overflow-hidden border border-primary/20 bg-base-300 flex flex-col items-center justify-center gap-4 text-base-content/30"
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								class="h-20 w-20"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke="currentColor"
-								aria-hidden="true"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="1"
-									d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-								/>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="1"
-									d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-								/>
-							</svg>
-							<p class="text-sm">Showreel à venir</p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- ==============================================================
-         GALERIE PHOTOS
-         ============================================================== -->
-			<section
-				id="galerie"
-				aria-labelledby="titre-galerie"
-				class="py-24 bg-base-100"
-			>
-				<div class="container mx-auto max-w-6xl px-6">
-					<div class="text-center mb-12">
-						<p
-							class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3"
-						>
-							Photographies
-						</p>
-						<h2 id="titre-galerie" class="text-4xl md:text-5xl font-bold">
-							Galerie
-						</h2>
-					</div>
-
-					<!--
-          GALERIE — Comment ajouter tes photos :
-
-          Pour chaque photo, utilise ce bloc (remplace XX par le numéro de la photo
-          et la description alt par une description précise) :
-
-          <figure class="gallery-item break-inside-avoid overflow-hidden rounded-xl
-                         border border-primary/10 hover:border-primary/40 transition-colors">
-            <picture>
-              <source media="(max-width: 640px)"
-                      srcset="assets/image/gallery-XX-mobile.webp"
-                      type="image/webp">
-              <img src="assets/image/gallery-XX-desktop.webp"
-                   alt="Vincent Guidoux — description de la scene ou du contexte"
-                   class="w-full h-auto object-cover"
-                   loading="lazy"
-                   width="800" height="1000">
-            </picture>
-            <figcaption class="text-xs text-base-content/40 p-2">Photo : <a href="https://rsphotography.ch/" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">RSphotography</a></figcaption>
-          </figure>
-
-          Tailles recommandées par photo :
-          gallery-XX-desktop.webp : 800 × 1000 px (portrait)
-          gallery-XX-mobile.webp  : 400 × 500 px
-
-          Format WebP recommandé pour les performances.
-        -->
-
-					<!-- Grille de photos (remplace les placeholders par de vraies photos) -->
-					<div
-						class="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4"
-						role="list"
-						aria-label="Galerie de photos de Vincent Guidoux"
-					>
-						<!-- Photo 1 -->
-						<figure
-							class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10 bg-base-200 aspect-[4/5] flex flex-col items-center justify-center"
-							role="listitem"
-						>
-							<span class="text-base-content/20 text-sm select-none"
-								>Photo 1</span
-							>
-							<figcaption class="text-xs text-base-content/40 mt-2">
-								Photo :
-								<a
-									href="https://rsphotography.ch/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="hover:text-primary transition-colors"
-									>RSphotography</a
-								>
-							</figcaption>
-						</figure>
-
-						<!-- Photo 2 -->
-						<figure
-							class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10 bg-base-200 aspect-square flex flex-col items-center justify-center"
-							role="listitem"
-						>
-							<span class="text-base-content/20 text-sm select-none"
-								>Photo 2</span
-							>
-							<figcaption class="text-xs text-base-content/40 mt-2">
-								Photo :
-								<a
-									href="https://rsphotography.ch/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="hover:text-primary transition-colors"
-									>RSphotography</a
-								>
-							</figcaption>
-						</figure>
-
-						<!-- Photo 3 -->
-						<figure
-							class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10 bg-base-200 aspect-[4/5] flex flex-col items-center justify-center"
-							role="listitem"
-						>
-							<span class="text-base-content/20 text-sm select-none"
-								>Photo 3</span
-							>
-							<figcaption class="text-xs text-base-content/40 mt-2">
-								Photo :
-								<a
-									href="https://rsphotography.ch/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="hover:text-primary transition-colors"
-									>RSphotography</a
-								>
-							</figcaption>
-						</figure>
-
-						<!-- Photo 4 -->
-						<figure
-							class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10 bg-base-200 aspect-[3/4] flex flex-col items-center justify-center"
-							role="listitem"
-						>
-							<span class="text-base-content/20 text-sm select-none"
-								>Photo 4</span
-							>
-							<figcaption class="text-xs text-base-content/40 mt-2">
-								Photo :
-								<a
-									href="https://rsphotography.ch/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="hover:text-primary transition-colors"
-									>RSphotography</a
-								>
-							</figcaption>
-						</figure>
-
-						<!-- Photo 5 -->
-						<figure
-							class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10 bg-base-200 aspect-[4/5] flex flex-col items-center justify-center"
-							role="listitem"
-						>
-							<span class="text-base-content/20 text-sm select-none"
-								>Photo 5</span
-							>
-							<figcaption class="text-xs text-base-content/40 mt-2">
-								Photo :
-								<a
-									href="https://rsphotography.ch/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="hover:text-primary transition-colors"
-									>RSphotography</a
-								>
-							</figcaption>
-						</figure>
-
-						<!-- Photo 6 -->
-						<figure
-							class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10 bg-base-200 aspect-square flex flex-col items-center justify-center"
-							role="listitem"
-						>
-							<span class="text-base-content/20 text-sm select-none"
-								>Photo 6</span
-							>
-							<figcaption class="text-xs text-base-content/40 mt-2">
-								Photo :
-								<a
-									href="https://rsphotography.ch/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="hover:text-primary transition-colors"
-									>RSphotography</a
-								>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-			</section>
-
-			<!-- ==============================================================
-         CURRICULUM VITÆ
-         ============================================================== -->
-			<section id="cv" aria-labelledby="titre-cv" class="py-24 bg-base-200">
-				<div class="container mx-auto max-w-6xl px-6">
-					<div class="text-center mb-16">
-						<p
-							class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3"
-						>
-							Mon parcours
-						</p>
-						<h2 id="titre-cv" class="text-4xl md:text-5xl font-bold">
-							Curriculum Vitæ
-						</h2>
-					</div>
-
-					<div class="max-w-3xl mx-auto">
-						<!-- Formation -->
-						<div class="mb-14">
-							<h3
-								class="text-lg font-bold text-primary mb-6 flex items-center gap-4"
-							>
-								<span class="w-8 h-px bg-primary" aria-hidden="true"></span>
-								Formation
-								<span
-									class="flex-1 h-px bg-primary/20"
-									aria-hidden="true"
-								></span>
-							</h3>
-							<ol class="space-y-5 list-none" aria-label="Formations">
-								<!-- TODO : remplace par tes vraies formations -->
-								<li class="flex gap-6 items-start">
-									<time class="text-primary/60 text-sm font-mono min-w-[4rem]"
-										>20XX</time
-									>
-									<div>
-										<p class="font-semibold">
-											Nom de la formation — École / Conservatoire
-										</p>
-										<p class="text-base-content/60 text-sm mt-0.5">
-											Description courte
-										</p>
-									</div>
-								</li>
-								<li class="flex gap-6 items-start">
-									<time class="text-primary/60 text-sm font-mono min-w-[4rem]"
-										>20XX</time
-									>
-									<div>
-										<p class="font-semibold">
-											Nom de la formation — École / Conservatoire
-										</p>
-										<p class="text-base-content/60 text-sm mt-0.5">
-											Description courte
-										</p>
-									</div>
-								</li>
-							</ol>
-						</div>
-
-						<!-- Expériences -->
-						<div class="mb-14">
-							<h3
-								class="text-lg font-bold text-primary mb-6 flex items-center gap-4"
-							>
-								<span class="w-8 h-px bg-primary" aria-hidden="true"></span>
-								Expériences
-								<span
-									class="flex-1 h-px bg-primary/20"
-									aria-hidden="true"
-								></span>
-							</h3>
-							<ol
-								class="space-y-5 list-none"
-								aria-label="Expériences professionnelles"
-							>
-								<!-- TODO : remplace par tes vraies expériences -->
-								<li class="flex gap-6 items-start">
-									<time class="text-primary/60 text-sm font-mono min-w-[4rem]"
-										>20XX</time
-									>
-									<div>
-										<p class="font-semibold">Titre du rôle — Nom du projet</p>
-										<p class="text-base-content/60 text-sm mt-0.5">
-											Réalisateur·rice · Production
-										</p>
-									</div>
-								</li>
-								<li class="flex gap-6 items-start">
-									<time class="text-primary/60 text-sm font-mono min-w-[4rem]"
-										>20XX</time
-									>
-									<div>
-										<p class="font-semibold">Titre du rôle — Nom du projet</p>
-										<p class="text-base-content/60 text-sm mt-0.5">
-											Réalisateur·rice · Production
-										</p>
-									</div>
-								</li>
-							</ol>
-						</div>
-
-						<!-- Téléchargement -->
-						<div class="text-center pt-10 border-t border-base-300">
-							<!--
-              TODO : Ajoute ton CV PDF dans src/assets/cv/cv-vincent-guidoux.pdf
-            -->
-							<a
-								href="assets/cv/cv-vincent-guidoux.pdf"
-								download
-								class="btn btn-primary btn-lg gap-3"
-								aria-label="Télécharger le CV de Vincent Guidoux en PDF"
+								class="aspect-video rounded-2xl overflow-hidden border border-primary/20 bg-base-300 flex flex-col items-center justify-center gap-4 text-base-content/30"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
-									class="h-5 w-5"
+									class="h-20 w-20"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -718,98 +450,1265 @@
 									<path
 										stroke-linecap="round"
 										stroke-linejoin="round"
-										stroke-width="2"
-										d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+										stroke-width="1"
+										d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+									/>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="1"
+										d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
 									/>
 								</svg>
-								Télécharger mon CV (PDF)
-							</a>
+								<p class="text-sm">Showreel a venir</p>
+							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 
-			<!-- ==============================================================
-         CONTACT
-         ============================================================== -->
-			<section
-				id="contact"
-				aria-labelledby="titre-contact"
-				class="py-24 bg-base-100"
-			>
-				<div class="container mx-auto max-w-6xl px-6">
-					<div class="text-center mb-12">
-						<p
-							class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3"
+				<section
+					id="galerie"
+					aria-labelledby="titre-galerie"
+					class="py-24 bg-base-100"
+				>
+					<div class="container mx-auto max-w-6xl px-6">
+						<div class="text-center mb-12">
+							<p
+								class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3"
+							>
+								Photographies
+							</p>
+							<h2 id="titre-galerie" class="text-4xl md:text-5xl font-bold">
+								Galerie
+							</h2>
+						</div>
+						<div
+							class="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4"
+							role="list"
+							aria-label="Galerie de photos de Vincent Guidoux"
 						>
-							Travaillons ensemble
-						</p>
-						<h2 id="titre-contact" class="text-4xl md:text-5xl font-bold mb-4">
-							Contact
-						</h2>
-						<p class="text-base-content/60 max-w-lg mx-auto">
-							Vous avez un projet ? N'hésitez pas à me contacter.
-						</p>
-					</div>
-
-					<div class="max-w-md mx-auto">
-						<div class="card bg-base-200 border border-primary/20">
-							<div class="card-body items-center text-center gap-8">
-								<!-- Email -->
-								<div>
-									<p
-										class="text-xs text-base-content/50 uppercase tracking-widest mb-2"
-									>
-										Email
-									</p>
-									<!-- TODO : remplace par ton vrai email -->
+							<figure
+								class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10"
+								role="listitem"
+							>
+								<img
+									src="assets/images/desktop/portrait-leaning-on-armchair-smiling.jpg"
+									alt="Vincent Guidoux appuye sur un fauteuil, souriant"
+									class="w-full"
+									loading="lazy"
+								/>
+								<figcaption
+									class="text-xs text-base-content/40 p-2 bg-base-200"
+								>
+									Photo :
 									<a
-										href="mailto:contact@vincentguidoux.ch"
-										class="text-lg font-semibold text-primary hover:underline break-all"
+										href="https://rsphotography.ch/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>RSphotography</a
 									>
-										contact@vincentguidoux.ch
-									</a>
-								</div>
-
-								<div class="divider my-0 w-full"></div>
-
-								<!-- Réseaux sociaux -->
-								<div>
-									<p
-										class="text-xs text-base-content/50 uppercase tracking-widest mb-4"
+								</figcaption>
+							</figure>
+							<figure
+								class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10"
+								role="listitem"
+							>
+								<img
+									src="assets/images/desktop/sitting-on-retro-tv-pointing-remote.jpg"
+									alt="Vincent Guidoux assis sur une television retro, pointant une telecommande"
+									class="w-full"
+									loading="lazy"
+								/>
+								<figcaption
+									class="text-xs text-base-content/40 p-2 bg-base-200"
+								>
+									Photo :
+									<a
+										href="https://rsphotography.ch/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>RSphotography</a
 									>
-										Réseaux sociaux
-									</p>
-									<div class="flex flex-wrap gap-3 justify-center">
-										<!-- TODO : remplace # par tes vrais liens -->
-										<a
-											href="#"
-											class="btn btn-outline btn-sm hover:btn-primary"
-											aria-label="Vincent Guidoux sur Instagram"
-											rel="noopener noreferrer"
-											target="_blank"
+								</figcaption>
+							</figure>
+							<figure
+								class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10"
+								role="listitem"
+							>
+								<img
+									src="assets/images/desktop/duo-portrait-facing-camera-smiling.jpg"
+									alt="Vincent Guidoux en duo, face camera, souriant"
+									class="w-full"
+									loading="lazy"
+								/>
+								<figcaption
+									class="text-xs text-base-content/40 p-2 bg-base-200"
+								>
+									Photo :
+									<a
+										href="https://rsphotography.ch/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>RSphotography</a
+									>
+									&amp;
+									<a
+										href="https://www.instagram.com/adriane__silvestre/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>Adriane Silvestre</a
+									>
+								</figcaption>
+							</figure>
+							<figure
+								class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10"
+								role="listitem"
+							>
+								<img
+									src="assets/images/desktop/black-and-white-closeup-in-armchair.jpg"
+									alt="Gros plan noir et blanc de Vincent Guidoux dans un fauteuil"
+									class="w-full"
+									loading="lazy"
+								/>
+								<figcaption
+									class="text-xs text-base-content/40 p-2 bg-base-200"
+								>
+									Photo :
+									<a
+										href="https://rsphotography.ch/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>RSphotography</a
+									>
+								</figcaption>
+							</figure>
+							<figure
+								class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10"
+								role="listitem"
+							>
+								<img
+									src="assets/images/desktop/sitting-on-retro-tv-phone-call.jpg"
+									alt="Vincent Guidoux assis sur une television retro, au telephone"
+									class="w-full"
+									loading="lazy"
+								/>
+								<figcaption
+									class="text-xs text-base-content/40 p-2 bg-base-200"
+								>
+									Photo :
+									<a
+										href="https://rsphotography.ch/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>RSphotography</a
+									>
+								</figcaption>
+							</figure>
+							<figure
+								class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10"
+								role="listitem"
+							>
+								<img
+									src="assets/images/desktop/hockey-jersey-looking-over-shoulder.jpg"
+									alt="Vincent Guidoux en maillot de hockey, regard par-dessus l'epaule"
+									class="w-full"
+									loading="lazy"
+								/>
+								<figcaption
+									class="text-xs text-base-content/40 p-2 bg-base-200"
+								>
+									Photo :
+									<a
+										href="https://rsphotography.ch/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>RSphotography</a
+									>
+								</figcaption>
+							</figure>
+							<figure
+								class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10"
+								role="listitem"
+							>
+								<img
+									src="assets/images/desktop/duo-portrait-looking-sideways.jpg"
+									alt="Vincent Guidoux en duo, regard de cote"
+									class="w-full"
+									loading="lazy"
+								/>
+								<figcaption
+									class="text-xs text-base-content/40 p-2 bg-base-200"
+								>
+									Photo :
+									<a
+										href="https://rsphotography.ch/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>RSphotography</a
+									>
+									&amp;
+									<a
+										href="https://www.instagram.com/adriane__silvestre/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>Adriane Silvestre</a
+									>
+								</figcaption>
+							</figure>
+							<figure
+								class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10"
+								role="listitem"
+							>
+								<img
+									src="assets/images/desktop/sitting-on-retro-tv-holding-knife.jpg"
+									alt="Vincent Guidoux assis sur une television retro, tenant un couteau"
+									class="w-full"
+									loading="lazy"
+								/>
+								<figcaption
+									class="text-xs text-base-content/40 p-2 bg-base-200"
+								>
+									Photo :
+									<a
+										href="https://rsphotography.ch/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>RSphotography</a
+									>
+								</figcaption>
+							</figure>
+							<figure
+								class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10"
+								role="listitem"
+							>
+								<img
+									src="assets/images/desktop/portrait-leaning-on-armchair.jpg"
+									alt="Vincent Guidoux appuye sur un fauteuil"
+									class="w-full"
+									loading="lazy"
+								/>
+								<figcaption
+									class="text-xs text-base-content/40 p-2 bg-base-200"
+								>
+									Photo :
+									<a
+										href="https://rsphotography.ch/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>RSphotography</a
+									>
+								</figcaption>
+							</figure>
+							<figure
+								class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10"
+								role="listitem"
+							>
+								<img
+									src="assets/images/desktop/sitting-on-retro-tv-hands-resting.jpg"
+									alt="Vincent Guidoux assis sur une television retro, mains posees"
+									class="w-full"
+									loading="lazy"
+								/>
+								<figcaption
+									class="text-xs text-base-content/40 p-2 bg-base-200"
+								>
+									Photo :
+									<a
+										href="https://rsphotography.ch/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>RSphotography</a
+									>
+								</figcaption>
+							</figure>
+							<figure
+								class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10"
+								role="listitem"
+							>
+								<img
+									src="assets/images/desktop/sitting-cross-legged-looking-up.jpg"
+									alt="Vincent Guidoux assis en tailleur, regard vers le haut"
+									class="w-full"
+									loading="lazy"
+								/>
+								<figcaption
+									class="text-xs text-base-content/40 p-2 bg-base-200"
+								>
+									Photo :
+									<a
+										href="https://rsphotography.ch/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>RSphotography</a
+									>
+								</figcaption>
+							</figure>
+							<figure
+								class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10"
+								role="listitem"
+							>
+								<img
+									src="assets/images/desktop/sitting-on-retro-tv-leaning-forward.jpg"
+									alt="Vincent Guidoux assis sur une television retro, penche en avant"
+									class="w-full"
+									loading="lazy"
+								/>
+								<figcaption
+									class="text-xs text-base-content/40 p-2 bg-base-200"
+								>
+									Photo :
+									<a
+										href="https://rsphotography.ch/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>RSphotography</a
+									>
+								</figcaption>
+							</figure>
+							<figure
+								class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10"
+								role="listitem"
+							>
+								<img
+									src="assets/images/desktop/hockey-jersey-back-view.jpg"
+									alt="Vincent Guidoux en maillot de hockey, vue de dos"
+									class="w-full"
+									loading="lazy"
+								/>
+								<figcaption
+									class="text-xs text-base-content/40 p-2 bg-base-200"
+								>
+									Photo :
+									<a
+										href="https://rsphotography.ch/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>RSphotography</a
+									>
+									&amp;
+									<a
+										href="https://www.instagram.com/adriane__silvestre/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>Adriane Silvestre</a
+									>
+								</figcaption>
+							</figure>
+							<figure
+								class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10"
+								role="listitem"
+							>
+								<img
+									src="assets/images/desktop/lying-down-pointing-up.jpg"
+									alt="Vincent Guidoux allonge, pointant vers le haut"
+									class="w-full"
+									loading="lazy"
+								/>
+								<figcaption
+									class="text-xs text-base-content/40 p-2 bg-base-200"
+								>
+									Photo :
+									<a
+										href="https://rsphotography.ch/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>RSphotography</a
+									>
+								</figcaption>
+							</figure>
+							<figure
+								class="gallery-item break-inside-avoid overflow-hidden rounded-xl border border-primary/10"
+								role="listitem"
+							>
+								<img
+									src="assets/images/desktop/sitting-looking-up-dark.jpg"
+									alt="Vincent Guidoux assis dans l'obscurite, regard vers le haut"
+									class="w-full"
+									loading="lazy"
+								/>
+								<figcaption
+									class="text-xs text-base-content/40 p-2 bg-base-200"
+								>
+									Photo :
+									<a
+										href="https://rsphotography.ch/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>RSphotography</a
+									>
+									&amp;
+									<a
+										href="https://www.instagram.com/adriane__silvestre/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:text-primary transition-colors"
+										>Adriane Silvestre</a
+									>
+								</figcaption>
+							</figure>
+						</div>
+					</div>
+				</section>
+
+				<section id="cv" aria-labelledby="titre-cv" class="py-24 bg-base-200">
+					<div class="container mx-auto max-w-6xl px-6">
+						<div class="text-center mb-16">
+							<p
+								class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3"
+							>
+								Mon parcours
+							</p>
+							<h2 id="titre-cv" class="text-4xl md:text-5xl font-bold">
+								Curriculum Vitae
+							</h2>
+						</div>
+						<div class="max-w-3xl mx-auto">
+							<div class="mb-14">
+								<h3
+									class="text-lg font-bold text-primary mb-6 flex items-center gap-4"
+								>
+									<span class="w-8 h-px bg-primary" aria-hidden="true"></span
+									>Formation<span
+										class="flex-1 h-px bg-primary/20"
+										aria-hidden="true"
+									></span>
+								</h3>
+								<ol class="space-y-5 list-none" aria-label="Formations">
+									<li class="flex gap-6 items-start">
+										<time class="text-primary/60 text-sm font-mono min-w-[4rem]"
+											>20XX</time
 										>
-											Instagram
-										</a>
-										<a
-											href="#"
-											class="btn btn-outline btn-sm hover:btn-primary"
-											aria-label="Vincent Guidoux sur LinkedIn"
-											rel="noopener noreferrer"
-											target="_blank"
+										<div>
+											<p class="font-semibold">
+												Nom de la formation — Ecole / Conservatoire
+											</p>
+											<p class="text-base-content/60 text-sm mt-0.5">
+												Description courte
+											</p>
+										</div>
+									</li>
+								</ol>
+							</div>
+							<div class="mb-14">
+								<h3
+									class="text-lg font-bold text-primary mb-6 flex items-center gap-4"
+								>
+									<span class="w-8 h-px bg-primary" aria-hidden="true"></span
+									>Experiences<span
+										class="flex-1 h-px bg-primary/20"
+										aria-hidden="true"
+									></span>
+								</h3>
+								<ol
+									class="space-y-5 list-none"
+									aria-label="Experiences professionnelles"
+								>
+									<li class="flex gap-6 items-start">
+										<time class="text-primary/60 text-sm font-mono min-w-[4rem]"
+											>20XX</time
 										>
-											LinkedIn
-										</a>
-										<!-- Optionnel :
-                  <a href="#" class="btn btn-outline btn-sm hover:btn-primary"
-                     target="_blank" rel="noopener noreferrer">IMDb</a>
-                  --></div>
+										<div>
+											<p class="font-semibold">Titre du role — Nom du projet</p>
+											<p class="text-base-content/60 text-sm mt-0.5">
+												Realisateur ou realisatrice · Production
+											</p>
+										</div>
+									</li>
+								</ol>
+							</div>
+							<div class="text-center pt-10 border-t border-base-300">
+								<a
+									href="assets/cv/cv-vincent-guidoux.pdf"
+									download
+									class="btn btn-primary btn-lg gap-3"
+									aria-label="Telecharger le CV de Vincent Guidoux en PDF"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										class="h-5 w-5"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke="currentColor"
+										aria-hidden="true"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+										/>
+									</svg>
+									Telecharger mon CV (PDF)
+								</a>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section
+					id="contact"
+					aria-labelledby="titre-contact"
+					class="py-24 bg-base-100"
+				>
+					<div class="container mx-auto max-w-6xl px-6">
+						<div class="text-center mb-12">
+							<p
+								class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3"
+							>
+								Travaillons ensemble
+							</p>
+							<h2
+								id="titre-contact"
+								class="text-4xl md:text-5xl font-bold mb-4"
+							>
+								Contact
+							</h2>
+							<p class="text-base-content/60 max-w-lg mx-auto">
+								Vous avez un projet ? N'hesitez pas a me contacter.
+							</p>
+						</div>
+						<div class="max-w-md mx-auto">
+							<div class="card bg-base-200 border border-primary/20">
+								<div class="card-body items-center text-center gap-8">
+									<div>
+										<p
+											class="text-xs text-base-content/50 uppercase tracking-widest mb-2"
+										>
+											Email
+										</p>
+										<a
+											href="mailto:vincent.guidoux@gmail.com"
+											class="text-lg font-semibold text-primary hover:underline break-all"
+											>vincent.guidoux@gmail.com</a
+										>
+									</div>
+									<!-- <div class="divider my-0 w-full"></div>
+									<div>
+										<p
+											class="text-xs text-base-content/50 uppercase tracking-widest mb-4"
+										>
+											Reseaux sociaux
+										</p>
+										<div class="flex flex-wrap gap-3 justify-center">
+											<a
+												href="#"
+												class="btn btn-outline btn-sm hover:btn-primary"
+												aria-label="Vincent Guidoux sur Instagram"
+												rel="noopener noreferrer"
+												target="_blank"
+												>Instagram</a
+											>
+											<a
+												href="#"
+												class="btn btn-outline btn-sm hover:btn-primary"
+												aria-label="Vincent Guidoux sur LinkedIn"
+												rel="noopener noreferrer"
+												target="_blank"
+												>LinkedIn</a
+											>
+										</div>
+									</div> -->
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+			</div>
+
+			<!-- ==============================================================
+         CONTENU INFO
+         ============================================================== -->
+			<div id="content-info" class="hidden">
+				<section
+					id="a-propos-info"
+					aria-labelledby="titre-a-propos-info"
+					class="py-24 bg-base-100"
+				>
+					<div class="container mx-auto max-w-6xl px-6">
+						<div class="text-center mb-16">
+							<p
+								class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3"
+							>
+								Qui suis-je ?
+							</p>
+							<h2
+								id="titre-a-propos-info"
+								class="text-4xl md:text-5xl font-bold"
+							>
+								A propos
+							</h2>
+						</div>
+						<div class="max-w-3xl mx-auto">
+							<p class="text-base-content/80 text-lg leading-relaxed mb-5">
+								Diplome en ingenierie logicielle de la HEIG-VD, charge de cours
+								en Java et technologies web. Co-fondateur d'une entreprise de
+								developpement web.
+							</p>
+							<p class="text-base-content/70 leading-relaxed mb-5">
+								Passionne par l'open source, la pedagogie et les solutions
+								simples. Convaincu que la technologie doit etre accessible,
+								durable et au service des gens.
+							</p>
+							<p class="text-base-content/70 leading-relaxed mb-10">
+								Stack : NestJS, NextJS, SvelteKit, PostgreSQL, Docker, GitLab
+								CI/CD.
+							</p>
+							<div
+								class="flex flex-wrap gap-2"
+								role="list"
+								aria-label="Competences techniques"
+							>
+								<span
+									class="badge badge-outline badge-primary badge-lg"
+									role="listitem"
+									>TypeScript</span
+								>
+								<span
+									class="badge badge-outline badge-primary badge-lg"
+									role="listitem"
+									>Java</span
+								>
+								<span
+									class="badge badge-outline badge-primary badge-lg"
+									role="listitem"
+									>NestJS</span
+								>
+								<span
+									class="badge badge-outline badge-primary badge-lg"
+									role="listitem"
+									>SvelteKit</span
+								>
+								<span
+									class="badge badge-outline badge-primary badge-lg"
+									role="listitem"
+									>PostgreSQL</span
+								>
+								<span
+									class="badge badge-outline badge-primary badge-lg"
+									role="listitem"
+									>Docker</span
+								>
+								<span
+									class="badge badge-outline badge-primary badge-lg"
+									role="listitem"
+									>Open source</span
+								>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section
+					id="projets"
+					aria-labelledby="titre-projets"
+					class="py-24 bg-base-200"
+				>
+					<div class="container mx-auto max-w-6xl px-6">
+						<div class="text-center mb-12">
+							<p
+								class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3"
+							>
+								Realisations
+							</p>
+							<h2
+								id="titre-projets"
+								class="text-4xl md:text-5xl font-bold mb-4"
+							>
+								Projets
+							</h2>
+							<p class="text-base-content/60 max-w-lg mx-auto">
+								Une selection de projets open source et professionnels.
+							</p>
+						</div>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+							<div
+								class="card bg-base-300 border border-primary/10 hover:border-primary/40 transition-colors"
+							>
+								<div class="card-body">
+									<h3 class="card-title text-primary">SpotIn</h3>
+									<p class="text-base-content/60">
+										Plateforme de gestion de spots NFC/QR. Projet open source
+										developpe avec
+										<a
+											href="https://artios.ch"
+											class="text-primary hover:underline"
+											target="_blank"
+											rel="noopener noreferrer"
+											>Artios Sarl</a
+										>.
+									</p>
+									<div class="card-actions justify-between items-center mt-4">
+										<div class="flex gap-2">
+											<a
+												href="https://spotin.ch/"
+												class="btn btn-outline btn-sm hover:btn-primary"
+												target="_blank"
+												rel="noopener noreferrer"
+												>Site</a
+											>
+											<a
+												href="https://github.com/spotin/spotin"
+												class="btn btn-outline btn-sm hover:btn-primary gap-1"
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													class="h-4 w-4"
+													fill="currentColor"
+													viewBox="0 0 24 24"
+													aria-hidden="true"
+												>
+													<path
+														d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+													/>
+												</svg>
+												GitHub
+											</a>
+										</div>
+										<div class="flex gap-1">
+											<span class="badge badge-outline badge-sm"
+												>Open source</span
+											>
+											<span class="badge badge-outline badge-sm">NFC/QR</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div
+								class="card bg-base-300 border border-primary/10 hover:border-primary/40 transition-colors"
+							>
+								<div class="card-body">
+									<h3 class="card-title text-primary">Act Now — Site web</h3>
+									<p class="text-base-content/60">
+										Maintenance du site web du mouvement de desobeissance civile
+										Act Now. Contribution personnelle et militante.
+									</p>
+									<div class="card-actions justify-between items-center mt-4">
+										<div class="flex gap-2">
+											<a
+												href="https://weactnow.ch/"
+												class="btn btn-outline btn-sm hover:btn-primary"
+												target="_blank"
+												rel="noopener noreferrer"
+												>Site</a
+											>
+											<a
+												href="https://gitlab.com/act-now/website"
+												class="btn btn-outline btn-sm hover:btn-primary gap-1"
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													class="h-4 w-4"
+													fill="currentColor"
+													viewBox="0 0 24 24"
+													aria-hidden="true"
+												>
+													<path
+														d="M23.955 13.587l-1.342-4.135-2.664-8.189a.455.455 0 00-.867 0L16.418 9.45H7.582L4.918 1.263a.455.455 0 00-.867 0L1.386 9.452.045 13.587a.924.924 0 00.331 1.023L12 23.054l11.624-8.443a.92.92 0 00.331-1.024"
+													/>
+												</svg>
+												GitLab
+											</a>
+										</div>
+										<div class="flex gap-1">
+											<span class="badge badge-outline badge-sm"
+												>Activisme</span
+											>
+											<span class="badge badge-outline badge-sm"
+												>Open source</span
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section
+					id="enseignement"
+					aria-labelledby="titre-enseignement"
+					class="py-24 bg-base-100"
+				>
+					<div class="container mx-auto max-w-6xl px-6">
+						<div class="text-center mb-12">
+							<p
+								class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3"
+							>
+								Pedagogie
+							</p>
+							<h2
+								id="titre-enseignement"
+								class="text-4xl md:text-5xl font-bold mb-4"
+							>
+								Enseignement
+							</h2>
+							<p class="text-base-content/60 max-w-lg mx-auto">
+								Charge de cours a la HEIG-VD en Java et technologies web.
+							</p>
+						</div>
+						<div class="max-w-4xl mx-auto space-y-6">
+							<div
+								class="card bg-base-200 border border-primary/10 hover:border-primary/40 transition-colors"
+							>
+								<div class="card-body">
+									<h3 class="card-title text-primary">
+										ProgIM1 — Introduction a la programmation
+									</h3>
+									<p class="text-base-content/60">
+										Cours d'introduction a la programmation en Java pour la voie
+										secondaire generale. Theorie courte, exercices en autonomie,
+										approche bienveillante.
+									</p>
+									<div class="card-actions justify-end mt-2">
+										<a
+											href="https://github.com/heig-vd-progim-course/heig-vd-progim1-course"
+											class="btn btn-outline btn-sm hover:btn-primary gap-2"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												class="h-4 w-4"
+												fill="currentColor"
+												viewBox="0 0 24 24"
+												aria-hidden="true"
+											>
+												<path
+													d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+												/>
+											</svg>
+											GitHub
+										</a>
+										<span class="badge badge-outline badge-sm"
+											>CC BY-SA 4.0</span
+										>
+									</div>
+								</div>
+							</div>
+							<div
+								class="card bg-base-200 border border-primary/10 hover:border-primary/40 transition-colors"
+							>
+								<div class="card-body">
+									<h3 class="card-title text-primary">
+										MVP — Minimum Viable Product
+									</h3>
+									<p class="text-base-content/60">
+										Cours co-donne avec
+										<a
+											href="https://github.com/ludelafo"
+											class="text-primary hover:underline"
+											target="_blank"
+											rel="noopener noreferrer"
+											>Ludovic Delafontaine</a
+										>. Conception et realisation de produits logiciels viables.
+									</p>
+									<div class="card-actions justify-end mt-2">
+										<a
+											href="https://github.com/heig-vd-mvp-course/heig-vd-mvp-course"
+											class="btn btn-outline btn-sm hover:btn-primary gap-2"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												class="h-4 w-4"
+												fill="currentColor"
+												viewBox="0 0 24 24"
+												aria-hidden="true"
+											>
+												<path
+													d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+												/>
+											</svg>
+											GitHub
+										</a>
+										<span class="badge badge-outline badge-sm"
+											>CC BY-SA 4.0</span
+										>
+									</div>
+								</div>
+							</div>
+							<div
+								class="card bg-base-200 border border-primary/10 hover:border-primary/40 transition-colors"
+							>
+								<div class="card-body">
+									<h3 class="card-title text-primary">
+										DevProdMed — Developpement produit media
+									</h3>
+									<p class="text-base-content/60">
+										Cours co-donne avec
+										<a
+											href="https://github.com/ludelafo"
+											class="text-primary hover:underline"
+											target="_blank"
+											rel="noopener noreferrer"
+											>Ludovic Delafontaine</a
+										>. Developpement de produits mediatiques.
+									</p>
+									<div class="card-actions justify-end mt-2">
+										<a
+											href="https://github.com/heig-vd-devprodmed-course/heig-vd-devprodmed-course"
+											class="btn btn-outline btn-sm hover:btn-primary gap-2"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												class="h-4 w-4"
+												fill="currentColor"
+												viewBox="0 0 24 24"
+												aria-hidden="true"
+											>
+												<path
+													d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+												/>
+											</svg>
+											GitHub
+										</a>
+										<span class="badge badge-outline badge-sm"
+											>CC BY-SA 4.0</span
+										>
+									</div>
+								</div>
+							</div>
+							<div
+								class="card bg-base-200 border border-primary/10 hover:border-primary/40 transition-colors"
+							>
+								<div class="card-body">
+									<h3 class="card-title text-primary">
+										WEB — Technologies web
+									</h3>
+									<p class="text-base-content/60">
+										Cours co-donne avec
+										<a
+											href="https://github.com/bchapuis"
+											class="text-primary hover:underline"
+											target="_blank"
+											rel="noopener noreferrer"
+											>Bertil Chapuis</a
+										>,
+										<a
+											href="https://github.com/OlivierLmr"
+											class="text-primary hover:underline"
+											target="_blank"
+											rel="noopener noreferrer"
+											>Olivier Lemer</a
+										>,
+										<a
+											href="https://github.com/Ovich"
+											class="text-primary hover:underline"
+											target="_blank"
+											rel="noopener noreferrer"
+											>Stefan Teofanovic</a
+										>
+										et d'autres. HTML, CSS, JavaScript, frameworks modernes.
+									</p>
+									<div class="card-actions justify-end mt-2">
+										<a
+											href="https://github.com/web-classroom/web-classroom.github.io"
+											class="btn btn-outline btn-sm hover:btn-primary gap-2"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												class="h-4 w-4"
+												fill="currentColor"
+												viewBox="0 0 24 24"
+												aria-hidden="true"
+											>
+												<path
+													d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+												/>
+											</svg>
+											GitHub
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Retours d'etudiantes et d'etudiants -->
+						<div class="max-w-4xl mx-auto mt-20">
+							<h3 class="text-center text-lg font-bold text-primary mb-8">
+								Ce que disent les personnes qui etudient
+							</h3>
+							<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+								<blockquote class="card bg-base-200 border border-primary/10">
+									<div class="card-body py-5">
+										<p
+											class="text-base-content/70 text-sm italic leading-relaxed"
+										>
+											&laquo; Les supports de cours complets, avec tout le
+											contenu par ecrit, m'aident enormement. Le fait que tout
+											soit disponible au moment du cours, voire meme avant, est
+											vraiment pratique. &raquo;
+										</p>
+									</div>
+								</blockquote>
+								<blockquote class="card bg-base-200 border border-primary/10">
+									<div class="card-body py-5">
+										<p
+											class="text-base-content/70 text-sm italic leading-relaxed"
+										>
+											&laquo; J'espere qu'on vous aura au semestre prochain ! Je
+											sais que toute la classe vous apprecie. &raquo;
+										</p>
+									</div>
+								</blockquote>
+								<blockquote class="card bg-base-200 border border-primary/10">
+									<div class="card-body py-5">
+										<p
+											class="text-base-content/70 text-sm italic leading-relaxed"
+										>
+											&laquo; La theorie courte et complete. Beaucoup de temps
+											mis a disposition durant la periode de cours pour
+											pratiquer et faire les exercices. &raquo;
+										</p>
+									</div>
+								</blockquote>
+								<blockquote class="card bg-base-200 border border-primary/10">
+									<div class="card-body py-5">
+										<p
+											class="text-base-content/70 text-sm italic leading-relaxed"
+										>
+											&laquo; J'apprecie vraiment l'energie positive que vous
+											apportez en classe, chaque cours devient plus motivant et
+											agreable. &raquo;
+										</p>
+									</div>
+								</blockquote>
+								<blockquote class="card bg-base-200 border border-primary/10">
+									<div class="card-body py-5">
+										<p
+											class="text-base-content/70 text-sm italic leading-relaxed"
+										>
+											&laquo; Le format court de la theorie et la mise en avant
+											des exercices. C'est tout le contraire de la facon de
+											faire ailleurs et c'est tres appreciable pour progresser.
+											&raquo;
+										</p>
+									</div>
+								</blockquote>
+								<blockquote class="card bg-base-200 border border-primary/10">
+									<div class="card-body py-5">
+										<p
+											class="text-base-content/70 text-sm italic leading-relaxed"
+										>
+											&laquo; Votre energie et approche douce, et votre
+											personnalite bienveillante malgre la difficulte de la
+											matiere. &raquo;
+										</p>
+									</div>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section
+					id="cv-info"
+					aria-labelledby="titre-cv-info"
+					class="py-24 bg-base-200"
+				>
+					<div class="container mx-auto max-w-6xl px-6">
+						<div class="text-center mb-16">
+							<p
+								class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3"
+							>
+								Mon parcours
+							</p>
+							<h2 id="titre-cv-info" class="text-4xl md:text-5xl font-bold">
+								Curriculum Vitae
+							</h2>
+						</div>
+						<div class="max-w-3xl mx-auto">
+							<div class="mb-14">
+								<h3
+									class="text-lg font-bold text-primary mb-6 flex items-center gap-4"
+								>
+									<span class="w-8 h-px bg-primary" aria-hidden="true"></span
+									>Formation<span
+										class="flex-1 h-px bg-primary/20"
+										aria-hidden="true"
+									></span>
+								</h3>
+								<ol class="space-y-5 list-none" aria-label="Formations">
+									<li class="flex gap-6 items-start">
+										<time class="text-primary/60 text-sm font-mono min-w-[4rem]"
+											>20XX</time
+										>
+										<div>
+											<p class="font-semibold">
+												Bachelor en ingenierie logicielle — HEIG-VD
+											</p>
+											<p class="text-base-content/60 text-sm mt-0.5">
+												Yverdon-les-Bains
+											</p>
+										</div>
+									</li>
+								</ol>
+							</div>
+							<div class="mb-14">
+								<h3
+									class="text-lg font-bold text-primary mb-6 flex items-center gap-4"
+								>
+									<span class="w-8 h-px bg-primary" aria-hidden="true"></span
+									>Experiences<span
+										class="flex-1 h-px bg-primary/20"
+										aria-hidden="true"
+									></span>
+								</h3>
+								<ol
+									class="space-y-5 list-none"
+									aria-label="Experiences professionnelles"
+								>
+									<li class="flex gap-6 items-start">
+										<time class="text-primary/60 text-sm font-mono min-w-[4rem]"
+											>20XX</time
+										>
+										<div>
+											<p class="font-semibold">Charge de cours — HEIG-VD</p>
+											<p class="text-base-content/60 text-sm mt-0.5">
+												Java, technologies web
+											</p>
+										</div>
+									</li>
+									<li class="flex gap-6 items-start">
+										<time class="text-primary/60 text-sm font-mono min-w-[4rem]"
+											>20XX</time
+										>
+										<div>
+											<p class="font-semibold">
+												Co-fondateur — Entreprise de developpement web
+											</p>
+											<p class="text-base-content/60 text-sm mt-0.5">
+												Avec Ludovic Delafontaine
+											</p>
+										</div>
+									</li>
+								</ol>
+							</div>
+							<div class="text-center pt-10 border-t border-base-300">
+								<a
+									href="assets/cv/cv-vincent-guidoux.pdf"
+									download
+									class="btn btn-primary btn-lg gap-3"
+									aria-label="Telecharger le CV de Vincent Guidoux en PDF"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										class="h-5 w-5"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke="currentColor"
+										aria-hidden="true"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+										/>
+									</svg>
+									Telecharger mon CV (PDF)
+								</a>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section
+					id="contact-info"
+					aria-labelledby="titre-contact-info"
+					class="py-24 bg-base-100"
+				>
+					<div class="container mx-auto max-w-6xl px-6">
+						<div class="text-center mb-12">
+							<p
+								class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3"
+							>
+								Travaillons ensemble
+							</p>
+							<h2
+								id="titre-contact-info"
+								class="text-4xl md:text-5xl font-bold mb-4"
+							>
+								Contact
+							</h2>
+							<p class="text-base-content/60 max-w-lg mx-auto">
+								Un projet, une collaboration ou une question ? N'hesitez pas.
+							</p>
+						</div>
+						<div class="max-w-md mx-auto">
+							<div class="card bg-base-200 border border-primary/20">
+								<div class="card-body items-center text-center gap-8">
+									<div>
+										<p
+											class="text-xs text-base-content/50 uppercase tracking-widest mb-2"
+										>
+											Email
+										</p>
+										<a
+											href="mailto:vincent.guidoux@gmail.com"
+											class="text-lg font-semibold text-primary hover:underline break-all"
+											>vincent.guidoux@gmail.com</a
+										>
+									</div>
+									<div class="divider my-0 w-full"></div>
+									<div>
+										<p
+											class="text-xs text-base-content/50 uppercase tracking-widest mb-4"
+										>
+											En ligne
+										</p>
+										<div class="flex flex-wrap gap-3 justify-center">
+											<a
+												href="#"
+												class="btn btn-outline btn-sm hover:btn-primary"
+												aria-label="Vincent Guidoux sur GitHub"
+												rel="noopener noreferrer"
+												target="_blank"
+												>GitHub</a
+											>
+											<a
+												href="#"
+												class="btn btn-outline btn-sm hover:btn-primary"
+												aria-label="Vincent Guidoux sur LinkedIn"
+												rel="noopener noreferrer"
+												target="_blank"
+												>LinkedIn</a
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
 		</main>
 
 		<!-- ================================================================
@@ -820,33 +1719,83 @@
 				<div
 					class="flex flex-col md:flex-row justify-between items-center gap-8 text-sm"
 				>
-					<!-- Identité -->
 					<div class="text-center md:text-left">
 						<p class="font-bold text-primary text-lg tracking-wide">
 							Vincent Guidoux
 						</p>
-						<p class="text-base-content/50 mt-0.5">Acteur &amp; Comédien</p>
+						<p id="footer-subtitle" class="text-base-content/50 mt-0.5">
+							Acteur &amp; Comedien
+						</p>
 					</div>
 				</div>
-
 				<div class="divider"></div>
-
 				<p class="text-center text-xs text-base-content/30">
 					&copy; <span id="annee">2026</span> Vincent Guidoux. Tous droits
-					réservés.
+					reserves.
 				</p>
 			</div>
 		</footer>
 
 		<script>
-			// Ferme le menu mobile après clic sur un lien
+			var toggle = document.getElementById("mode-toggle");
+			var root = document.documentElement;
+			var labelArt = document.getElementById("label-art");
+			var labelInfo = document.getElementById("label-info");
+			var taglineArt = document.getElementById("tagline-art");
+			var taglineInfo = document.getElementById("tagline-info");
+			var ctaArt = document.getElementById("cta-art");
+			var ctaInfo = document.getElementById("cta-info");
+			var contentArt = document.getElementById("content-art");
+			var contentInfo = document.getElementById("content-info");
+			var navArt = document.getElementById("nav-art");
+			var navInfo = document.getElementById("nav-info");
+			var mobileNavArt = document.getElementById("mobile-nav-art");
+			var mobileNavInfo = document.getElementById("mobile-nav-info");
+			var footerSub = document.getElementById("footer-subtitle");
+			var heroBgArt = document.getElementById("hero-bg-art");
+			var heroBgInfo = document.getElementById("hero-bg-info");
+
+			function switchMode(isInfo) {
+				root.setAttribute("data-palette", isInfo ? "info" : "art");
+				labelArt.style.opacity = isInfo ? "0.4" : "1";
+				labelInfo.style.opacity = isInfo ? "1" : "0.4";
+				taglineArt.classList.toggle("hidden", isInfo);
+				taglineInfo.classList.toggle("hidden", !isInfo);
+				ctaArt.classList.toggle("hidden", isInfo);
+				ctaInfo.classList.toggle("hidden", !isInfo);
+				contentArt.classList.toggle("hidden", isInfo);
+				contentInfo.classList.toggle("hidden", !isInfo);
+				navArt.classList.toggle("hidden", isInfo);
+				navArt.classList.toggle("md:flex", !isInfo);
+				navInfo.classList.toggle("hidden", !isInfo);
+				navInfo.classList.toggle("md:flex", isInfo);
+				mobileNavArt.classList.toggle("hidden", isInfo);
+				mobileNavInfo.classList.toggle("hidden", !isInfo);
+				heroBgArt.style.opacity = isInfo ? "0" : "0.3";
+				heroBgInfo.style.opacity = isInfo ? "0.3" : "0";
+				footerSub.innerHTML = isInfo
+					? "Ingenieur &amp; Enseignant"
+					: "Acteur &amp; Comedien";
+			}
+
+			toggle.addEventListener("change", function () {
+				switchMode(toggle.checked);
+			});
+			labelArt.addEventListener("click", function () {
+				toggle.checked = false;
+				switchMode(false);
+			});
+			labelInfo.addEventListener("click", function () {
+				toggle.checked = true;
+				switchMode(true);
+			});
+
 			document.querySelectorAll(".dropdown-content a").forEach(function (link) {
 				link.addEventListener("click", function () {
 					if (document.activeElement) document.activeElement.blur();
 				});
 			});
 
-			// Année de copyright dynamique
 			var el = document.getElementById("annee");
 			if (el) el.textContent = new Date().getFullYear();
 		</script>

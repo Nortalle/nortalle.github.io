@@ -8,12 +8,20 @@
 	--font-sans: "Atkinson Hyperlegible", ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Custom colors overriding DaisyUI dracula theme */
-[data-theme="dracula"] {
+/* Palette Art : tons chauds dores (photos studio) */
+[data-palette="art"] {
 	--color-primary: #ddbaa3;
 	--color-primary-content: #1a1210;
 	--color-secondary: #5f402e;
 	--color-secondary-content: #f5ebe5;
+}
+
+/* Palette Info : tons froids neutres (tech) */
+[data-palette="info"] {
+	--color-primary: #e4e6da;
+	--color-primary-content: #1a1a1a;
+	--color-secondary: #a5aba3;
+	--color-secondary-content: #1a1a1a;
 }
 
 /* Smooth scrolling */

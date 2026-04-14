@@ -84,7 +84,7 @@ Vimeo : `https://player.vimeo.com/video/TON_VIDEO_ID`
 
 Dans le fichier HTML, cherche `TODO` dans la section `Contact` et remplace :
 
-- `contact@vincentguidoux.ch` par ton vrai email
+- `vincent.guidoux@gmail.com` par ton vrai email
 - Les `href="#"` par tes vrais liens Instagram / LinkedIn
 
 ## Déploiement
