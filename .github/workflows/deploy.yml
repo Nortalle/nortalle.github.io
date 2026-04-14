@@ -2,7 +2,7 @@ name: Deploy portfolio to GitHub Pages
 
 on:
   push:
-    branches: [1-create-portfolio]
+    branches: [main]
   pull_request:
   workflow_dispatch:
 
