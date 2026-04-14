@@ -11,7 +11,7 @@ Portfolio d'acteur et comedien. Site statique construit avec
 | -------- | ------------------------------- |
 | Hero     | Photo principale + accroche     |
 | À propos | Biographie + badges             |
-| Showreel | Vidéo YouTube / Vimeo embarquée |
+| Selftape | Vidéo YouTube / Vimeo embarquée |
 | Galerie  | Grille de photos responsive     |
 | CV       | Parcours + téléchargement PDF   |
 | Contact  | Email + réseaux sociaux         |
@@ -72,7 +72,7 @@ Place ton CV PDF ici : `src/assets/cv/cv-vincent-guidoux.pdf`
 
 Le bouton de téléchargement pointe déjà vers ce chemin.
 
-### Ajouter le showreel (YouTube / Vimeo)
+### Ajouter le selftape (YouTube / Vimeo)
 
 Dans `src/index.html`, cherche la section `VIDEOSHOWREEL`, décommente le bloc
 `<iframe>` et remplace `TON_VIDEO_ID` par l'identifiant de ta vidéo.
