@@ -1,0 +1,14 @@
+{
+  "name": "vincent-guidoux-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -i src/assets/css/input.css -o dist/assets/css/style.css --minify",
+    "dev": "tailwindcss -i src/assets/css/input.css -o dist/assets/css/style.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "daisyui": "^5.0.0",
+    "tailwindcss": "^4.1.0"
+  }
+}
