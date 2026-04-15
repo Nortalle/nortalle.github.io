@@ -1820,36 +1820,13 @@
 					</div>
 				</section>
 			</div>
-			<!-- Toggle Art / Info -->
-			<div class="flex items-center justify-center gap-6 sm:gap-8 mb-12">
-				<span
-					id="label-art-2"
-					class="text-sm sm:text-base font-bold uppercase tracking-widest cursor-pointer transition-opacity duration-300"
-					style="color: #ddbaa3"
-				>
-					Acteur &amp; Comédien
-				</span>
-				<input
-					type="checkbox"
-					class="toggle toggle-lg"
-					id="mode-toggle-2"
-					aria-label="Basculer entre le portfolio artistique et informatique"
-				/>
-				<span
-					id="label-info-2"
-					class="text-sm sm:text-base font-bold uppercase tracking-widest cursor-pointer opacity-40 transition-opacity duration-300"
-					style="color: #e4e6da"
-				>
-					Ingénieur &amp; Enseignant
-				</span>
-			</div>
 		</main>
 
 		<!-- ==============================================================
          BOUTON DE SWAP FLOTTANT
          ============================================================== -->
 		<label
-			class="swap swap-rotate fixed bottom-6 right-6 z-50 btn btn-circle btn-lg btn-primary shadow-2xl hover:shadow-primary/50 transition-shadow"
+			class="swap swap-rotate fixed bottom-6 right-6 z-50 btn btn-square btn-lg btn-primary shadow-2xl hover:shadow-primary/50 transition-shadow"
 			aria-label="Basculer entre le portfolio artistique et informatique"
 		>
 			<input type="checkbox" id="mode-swap" aria-hidden="true" />
@@ -1884,13 +1861,10 @@
 
 		<script>
 			var toggle = document.getElementById("mode-toggle");
-			var toggle2 = document.getElementById("mode-toggle-2");
 			var swap = document.getElementById("mode-swap");
 			var root = document.documentElement;
 			var labelArt = document.getElementById("label-art");
-			var labelArt2 = document.getElementById("label-art-2");
 			var labelInfo = document.getElementById("label-info");
-			var labelInfo2 = document.getElementById("label-info-2");
 			var taglineArt = document.getElementById("tagline-art");
 			var taglineInfo = document.getElementById("tagline-info");
 			var ctaArt = document.getElementById("cta-art");
@@ -1908,9 +1882,7 @@
 			function switchMode(isInfo) {
 				root.setAttribute("data-palette", isInfo ? "info" : "art");
 				labelArt.style.opacity = isInfo ? "0.4" : "1";
-				labelArt2.style.opacity = isInfo ? "0.4" : "1";
 				labelInfo.style.opacity = isInfo ? "1" : "0.4";
-				labelInfo2.style.opacity = isInfo ? "1" : "0.4";
 				taglineArt.classList.toggle("hidden", isInfo);
 				taglineInfo.classList.toggle("hidden", !isInfo);
 				ctaArt.classList.toggle("hidden", isInfo);
@@ -1929,41 +1901,20 @@
 			}
 
 			toggle.addEventListener("change", function () {
-				toggle2.checked = toggle.checked;
 				swap.checked = toggle.checked;
 				switchMode(toggle.checked);
 			});
-			toggle2.addEventListener("change", function () {
-				toggle.checked = toggle2.checked;
-				swap.checked = toggle2.checked;
-				switchMode(toggle2.checked);
-			});
 			swap.addEventListener("change", function () {
 				toggle.checked = swap.checked;
-				toggle2.checked = swap.checked;
 				switchMode(swap.checked);
 			});
 			labelArt.addEventListener("click", function () {
 				toggle.checked = false;
-				toggle2.checked = false;
-				swap.checked = false;
-				switchMode(false);
-			});
-			labelArt2.addEventListener("click", function () {
-				toggle.checked = false;
-				toggle2.checked = false;
 				swap.checked = false;
 				switchMode(false);
 			});
 			labelInfo.addEventListener("click", function () {
 				toggle.checked = true;
-				toggle2.checked = true;
-				swap.checked = true;
-				switchMode(true);
-			});
-			labelInfo2.addEventListener("click", function () {
-				toggle.checked = true;
-				toggle2.checked = true;
 				swap.checked = true;
 				switchMode(true);
 			});
