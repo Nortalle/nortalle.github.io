@@ -1860,24 +1860,24 @@
 		</footer>
 
 		<script>
-			var toggle = document.getElementById("mode-toggle");
-			var swap = document.getElementById("mode-swap");
-			var root = document.documentElement;
-			var labelArt = document.getElementById("label-art");
-			var labelInfo = document.getElementById("label-info");
-			var taglineArt = document.getElementById("tagline-art");
-			var taglineInfo = document.getElementById("tagline-info");
-			var ctaArt = document.getElementById("cta-art");
-			var ctaInfo = document.getElementById("cta-info");
-			var contentArt = document.getElementById("content-art");
-			var contentInfo = document.getElementById("content-info");
-			var navArt = document.getElementById("nav-art");
-			var navInfo = document.getElementById("nav-info");
-			var mobileNavArt = document.getElementById("mobile-nav-art");
-			var mobileNavInfo = document.getElementById("mobile-nav-info");
-			var footerSub = document.getElementById("footer-subtitle");
-			var heroBgArt = document.getElementById("hero-bg-art");
-			var heroBgInfo = document.getElementById("hero-bg-info");
+			let toggle = document.getElementById("mode-toggle");
+			let swap = document.getElementById("mode-swap");
+			let root = document.documentElement;
+			let labelArt = document.getElementById("label-art");
+			let labelInfo = document.getElementById("label-info");
+			let taglineArt = document.getElementById("tagline-art");
+			let taglineInfo = document.getElementById("tagline-info");
+			let ctaArt = document.getElementById("cta-art");
+			let ctaInfo = document.getElementById("cta-info");
+			let contentArt = document.getElementById("content-art");
+			let contentInfo = document.getElementById("content-info");
+			let navArt = document.getElementById("nav-art");
+			let navInfo = document.getElementById("nav-info");
+			let mobileNavArt = document.getElementById("mobile-nav-art");
+			let mobileNavInfo = document.getElementById("mobile-nav-info");
+			let footerSub = document.getElementById("footer-subtitle");
+			let heroBgArt = document.getElementById("hero-bg-art");
+			let heroBgInfo = document.getElementById("hero-bg-info");
 
 			function switchMode(isInfo) {
 				root.setAttribute("data-palette", isInfo ? "info" : "art");
@@ -1925,7 +1925,7 @@
 				});
 			});
 
-			var el = document.getElementById("annee");
+			let el = document.getElementById("annee");
 			if (el) el.textContent = new Date().getFullYear();
 		</script>
 	</body>
