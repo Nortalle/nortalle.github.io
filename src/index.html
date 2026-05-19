@@ -60,8 +60,26 @@
 			media="(min-width: 768px)"
 		/>
 
-		<!-- CSS -->
-		<link rel="stylesheet" href="assets/css/style.css" />
+		<!-- CSS critique inline pour éviter le flash de contenu non stylé -->
+		<style>
+			html {
+				background: oklch(28.822% 0.022 277.508);
+				color: oklch(97.747% 0.007 106.545);
+				min-height: 100svh;
+			}
+		</style>
+
+		<!-- CSS principal chargé en non-bloquant -->
+		<link
+			rel="preload"
+			as="style"
+			href="assets/css/style.css"
+			onload="
+				this.onload = null;
+				this.rel = 'stylesheet';
+			"
+		/>
+		<noscript><link rel="stylesheet" href="assets/css/style.css" /></noscript>
 	</head>
 
 	<body class="min-h-screen bg-base-100 text-base-content">
@@ -1149,9 +1167,12 @@
 											>2025</time
 										>
 										<div>
-											<p class="font-semibold">AVLI — Association Vaudoise des Ligues d'Impro</p>
+											<p class="font-semibold">
+												AVLI — Association Vaudoise des Ligues d'Impro
+											</p>
 											<p class="text-base-content/60 text-sm mt-0.5">
-												Membre du comité · Responsable Ligue A · depuis septembre 2025
+												Membre du comité · Responsable Ligue A · depuis
+												septembre 2025
 											</p>
 										</div>
 									</li>
@@ -2026,7 +2047,7 @@
 			class="swap swap-rotate fixed bottom-6 right-6 z-50 btn btn-square btn-lg btn-primary shadow-2xl hover:shadow-primary/50 transition-shadow"
 			aria-label="Basculer entre le portfolio artistique et informatique"
 		>
-			<input type="checkbox" id="mode-swap" aria-hidden="true" />
+			<input type="checkbox" id="mode-swap" aria-hidden="true" tabindex="-1" />
 			<div class="swap-off text-3xl" aria-hidden="true">🎭</div>
 			<div class="swap-on text-3xl" aria-hidden="true">💻</div>
 		</label>
@@ -2190,6 +2211,9 @@
 								src="assets/images/desktop/sitting-cross-legged-looking-up.jpg"
 								alt="Vincent Guidoux assis en tailleur, regard vers le haut"
 								class="max-h-[80vh] max-w-full object-contain"
+								loading="lazy"
+								width="1920"
+								height="1280"
 							/>
 						</picture>
 					</div>
@@ -2208,6 +2232,9 @@
 								src="assets/images/desktop/duo-portrait-facing-camera-smiling.jpg"
 								alt="Vincent Guidoux en duo, face camera, souriant"
 								class="max-h-[80vh] max-w-full object-contain"
+								loading="lazy"
+								width="1280"
+								height="1920"
 							/>
 						</picture>
 					</div>
@@ -2226,6 +2253,9 @@
 								src="assets/images/desktop/sitting-on-retro-tv-phone-call.jpg"
 								alt="Vincent Guidoux assis sur une télévision rétro, au téléphone"
 								class="max-h-[80vh] max-w-full object-contain"
+								loading="lazy"
+								width="1280"
+								height="1920"
 							/>
 						</picture>
 					</div>
@@ -2242,6 +2272,9 @@
 								src="assets/images/desktop/portrait-leaning-on-armchair.jpg"
 								alt="Vincent Guidoux appuyé sur un fauteuil"
 								class="max-h-[80vh] max-w-full object-contain"
+								loading="lazy"
+								width="1280"
+								height="1920"
 							/>
 						</picture>
 					</div>
@@ -2260,6 +2293,9 @@
 								src="assets/images/desktop/sitting-on-retro-tv-leaning-forward.jpg"
 								alt="Vincent Guidoux assis sur une télévision rétro, penché en avant"
 								class="max-h-[80vh] max-w-full object-contain"
+								loading="lazy"
+								width="1280"
+								height="1920"
 							/>
 						</picture>
 					</div>
@@ -2278,6 +2314,9 @@
 								src="assets/images/desktop/standing-grey-sweatshirt-looking-aside.jpg"
 								alt="Vincent Guidoux debout, pull gris, regard de côté"
 								class="max-h-[80vh] max-w-full object-contain"
+								loading="lazy"
+								width="1080"
+								height="1620"
 							/>
 						</picture>
 					</div>
@@ -2294,6 +2333,9 @@
 								src="assets/images/desktop/lying-down-pointing-up.jpg"
 								alt="Vincent Guidoux allongé, pointant vers le haut"
 								class="max-h-[80vh] max-w-full object-contain"
+								loading="lazy"
+								width="1280"
+								height="1920"
 							/>
 						</picture>
 					</div>
@@ -2310,6 +2352,9 @@
 								src="assets/images/desktop/sitting-looking-up-dark.jpg"
 								alt="Vincent Guidoux assis dans l'obscurité, regard vers le haut"
 								class="max-h-[80vh] max-w-full object-contain"
+								loading="lazy"
+								width="1280"
+								height="1920"
 							/>
 						</picture>
 					</div>
@@ -2328,6 +2373,9 @@
 								src="assets/images/desktop/black-and-white-closeup-in-armchair.jpg"
 								alt="Gros plan noir et blanc de Vincent Guidoux dans un fauteuil"
 								class="max-h-[80vh] max-w-full object-contain"
+								loading="lazy"
+								width="1280"
+								height="1920"
 							/>
 						</picture>
 					</div>
@@ -2346,6 +2394,9 @@
 								src="assets/images/desktop/standing-grey-sweatshirt-frontal.jpg"
 								alt="Vincent Guidoux debout, pull gris, regard frontal"
 								class="max-h-[80vh] max-w-full object-contain"
+								loading="lazy"
+								width="1029"
+								height="1545"
 							/>
 						</picture>
 					</div>
@@ -2429,6 +2480,20 @@
 					if (e.key === "ArrowLeft") goTo(current - 1);
 					if (e.key === "ArrowRight") goTo(current + 1);
 				});
+
+				var scrollTimer;
+				carousel.addEventListener(
+					"scroll",
+					function () {
+						clearTimeout(scrollTimer);
+						scrollTimer = setTimeout(function () {
+							var idx = Math.round(carousel.scrollLeft / carousel.offsetWidth);
+							current = ((idx % total) + total) % total;
+							updateUI();
+						}, 100);
+					},
+					{ passive: true },
+				);
 
 				document
 					.querySelectorAll(".gallery-item")
