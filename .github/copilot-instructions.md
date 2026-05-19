@@ -13,7 +13,7 @@ and context to provide more relevant and personalized suggestions.
 - **Work**: Software engineer, web developer, teacher (charge de cours) at
   HEIG-VD (Java, web technologies)
 - **Company**: Co-founded a web development business with Ludovic Delafontaine
-- **Theatre**: Improv (Le Djinn), professional acting training at Acting Line
+- **Theatre**: Improv (Le GIN), professional acting training at Acting Line
   Studio (Lausanne)
 - **Values**: Open source, simplicity, ecological thinking, accessible solutions
 

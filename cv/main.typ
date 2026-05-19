@@ -99,9 +99,9 @@ Conception, réalisation et mise en fonction d'un logiciel vidéoludique interac
 #linebreak()
 Membre actif de la troupe d'improvisation théâtrale
 
-*AVLI* #h(1fr) _Septembre 2025 - Présent_
+*AVLI -- Association Vaudoise des Ligues d'Impro* #h(1fr) _Septembre 2025 - Présent_
 #linebreak()
-Membre du comité
+Membre du comité · Responsable Ligue A
 
 *ImproBidule* #h(1fr) _Septembre 2023 - Septembre 2025_
 #linebreak()
