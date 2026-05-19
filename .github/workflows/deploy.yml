@@ -18,9 +18,38 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  # CV
+  build-cv:
     runs-on: ubuntu-latest
+    container: ghcr.io/typst/typst:v0.11.1
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
+      - name: Install required packages
+        run: |
+          apk add --no-cache ghostscript
+
+      - name: Compile CV with Typst
+        working-directory: cv
+        run: |
+          typst compile main.typ
+
+      - name: Optimize PDF
+        run: |
+          ps2pdf cv/main.pdf cv/cv-vincent-guidoux.pdf
+
+      - name: Upload CV artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-files
+          path: cv/cv-vincent-guidoux.pdf
+          if-no-files-found: error
+          retention-days: 1
+
+  # Website
+  build-website:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
@@ -40,39 +69,58 @@ jobs:
       - name: Assemble dist directory
         run: |
           mkdir -p dist/assets/css
-          mkdir -p dist/assets/image
           mkdir -p dist/assets/cv
 
           # HTML pages
           cp src/index.html dist/index.html
 
-          # Static assets (images, CV, etc.)
-          if [ -d "src/assets/image" ] && [ "$(ls -A src/assets/image 2>/dev/null)" ]; then
-            cp -r src/assets/image/. dist/assets/image/
+          # Static assets (images)
+          if [ -d "src/assets/images" ] && [ "$(ls -A src/assets/images 2>/dev/null)" ]; then
+            cp -r src/assets/images dist/assets/images
           fi
-          if [ -d "src/assets/cv" ] && [ "$(ls -A src/assets/cv 2>/dev/null)" ]; then
-            cp -r src/assets/cv/. dist/assets/cv/
-          fi
+
           # Favicon (optional – add src/favicon.ico when available)
           if [ -f "src/favicon.ico" ]; then
             cp src/favicon.ico dist/favicon.ico
           fi
 
-      - name: Upload Pages artifact
-        if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload website artifact
+        uses: actions/upload-artifact@v4
         with:
+          name: website-files
           path: dist
+          if-no-files-found: error
+          retention-days: 1
 
-  deploy:
-    needs: build
-    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+  # Merge artifacts and deploy
+  merge-and-deploy:
+    if:
+      github.ref == 'refs/heads/main' || github.event_name ==
+      'workflow_dispatch'
+    needs: [build-cv, build-website]
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
+      - name: Download website files
+        uses: actions/download-artifact@v4
+        with:
+          name: website-files
+          path: dist
+
+      - name: Download CV files
+        uses: actions/download-artifact@v4
+        with:
+          name: cv-files
+          path: dist/assets/cv
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
